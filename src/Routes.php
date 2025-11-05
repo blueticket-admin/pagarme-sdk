@@ -6,6 +6,29 @@ use PagarMe\Anonymous;
 
 class Routes
 {
+
+    /**
+     * @return \PagarMe\Anonymous
+     */
+    public static function orders()
+    {
+        $anonymous = new Anonymous();
+
+        $anonymous->base = static function () {
+            return 'orders';
+        };
+
+        $anonymous->details = static function ($id) {
+            return "orders/$id";
+        };
+
+        $anonymous->list = static function ($id) {
+            return "orders";
+        };
+
+        return $anonymous;
+    }
+    
     /**
      * @return \PagarMe\Anonymous
      */
