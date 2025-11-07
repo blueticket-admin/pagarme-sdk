@@ -20,15 +20,18 @@ final class PagarMeException extends \Exception
     private $errorMessage;
 
     /**
+     * @var string
+     */
+    private $errors;
+
+    /**
      * @param string $type
      * @param string $parameterName
      * @param string $errorMessage
      */
-    public function __construct($type, $parameterName, $errorMessage)
+    public function __construct($errors)
     {
-        $this->type = $type;
-        $this->parameterName = $parameterName;
-        $this->errorMessage = $errorMessage;
+        $this->errors = $errors;
 
         $exceptionMessage = $this->buildExceptionMessage();
 
@@ -40,12 +43,7 @@ final class PagarMeException extends \Exception
      */
     private function buildExceptionMessage()
     {
-        return sprintf(
-            'ERROR TYPE: %s. PARAMETER: %s. MESSAGE: %s',
-            $this->type,
-            $this->parameterName,
-            $this->errorMessage
-        );
+        return json_encode($this->errors);
     }
 
     /**
