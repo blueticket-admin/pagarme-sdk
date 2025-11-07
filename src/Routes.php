@@ -37,8 +37,8 @@ class Routes
     {
         $anonymous = new Anonymous();
 
-        $anonymous->base = static function () {
-            return 'charges';
+        $anonymous->refund = static function ($id) {
+            return "charges/$id";
         };
 
         return $anonymous;
