@@ -28,6 +28,21 @@ class Routes
 
         return $anonymous;
     }
+
+
+    /**
+     * @return \PagarMe\Anonymous
+     */
+    public static function charges()
+    {
+        $anonymous = new Anonymous();
+
+        $anonymous->base = static function () {
+            return 'charges';
+        };
+
+        return $anonymous;
+    }
     
     /**
      * @return \PagarMe\Anonymous
