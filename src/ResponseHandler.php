@@ -52,9 +52,7 @@ class ResponseHandler
         }
 
         return new PagarMeException(
-            $jsonError->errors[0]->type,
-            $jsonError->errors[0]->parameter_name,
-            $jsonError->errors[0]->message
+            $jsonError->errors
         );
     }
 
