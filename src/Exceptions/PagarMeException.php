@@ -61,4 +61,12 @@ final class PagarMeException extends \Exception
     {
         return $this->parameterName;
     }
+
+    /**
+     * @return string
+     */
+    public function getErrors()
+    {
+        return $this->errors;
+    }
 }
