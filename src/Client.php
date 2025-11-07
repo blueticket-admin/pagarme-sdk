@@ -9,6 +9,7 @@ use PagarMe\Endpoints\BankAccounts;
 use PagarMe\Endpoints\BulkAnticipations;
 use PagarMe\Endpoints\Transactions;
 use PagarMe\Endpoints\Orders;
+use PagarMe\Endpoints\Charges;
 use PagarMe\Endpoints\Customers;
 use PagarMe\Endpoints\Cards;
 use PagarMe\Endpoints\Recipients;
@@ -164,6 +165,7 @@ class Client
 
         $this->transactions = new Transactions($this);
         $this->orders = new Orders($this);
+        $this->charges = new Charges($this);
         $this->customers = new Customers($this);
         $this->cards = new Cards($this);
         $this->recipients = new Recipients($this);
