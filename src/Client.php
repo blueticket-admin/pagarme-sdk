@@ -59,7 +59,12 @@ class Client
      * @var \PagarMe\Endpoints\Orders
      */
     private $orders;
-    
+
+    /**
+     * @var \PagarMe\Endpoints\Orders
+     */
+    private $charges;
+
     /**
      * @var \PagarMe\Endpoints\Customers
      */
@@ -266,6 +271,14 @@ class Client
     public function orders()
     {
         return $this->orders;
+    }
+    
+    /**
+     * @return \PagarMe\Endpoints\Orders
+     */
+    public function charges()
+    {
+        return $this->charges;
     }
     
     /**
